@@ -1,0 +1,7 @@
+{
+  "name": "UHV Assignment Processor",
+  "description": "An AI-powered tool to analyze and summarize Universal Human Values assignments from OCR text into structured JSON format.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
