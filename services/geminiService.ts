@@ -8,11 +8,11 @@ Your Tasks:
 1. Read the provided student text or handwritten image carefully.
 2. Identify and extract: Student Name and Roll Number.
 3. Identify answers related to: Role in Self, Role in Family, Role in Society, and Role in Environment.
-4. For each section, generate a short summary of 3–5 bullet points.
-5. Use simple English, NO long sentences.
-6. Only extract main ideas, values, and responsibilities.
-7. If any section is missing or unclear, infer meaningful short points.
-8. If fully missing, output: "Not mentioned clearly." in the list.
+4. For each section, generate EXACTLY ONE single-sentence statement summarizing the core value.
+5. Do NOT list multiple bullet points. The output array for each section must contain only one string.
+6. Use simple English.
+7. If any section is missing or unclear, infer a meaningful short statement.
+8. If fully missing, output: "Not mentioned clearly."
 `;
 
 const RESPONSE_SCHEMA: Schema = {
@@ -23,22 +23,22 @@ const RESPONSE_SCHEMA: Schema = {
     self: {
       type: Type.ARRAY,
       items: { type: Type.STRING },
-      description: "Bullet points for Role in Self",
+      description: "A single 1-line statement for Role in Self",
     },
     family: {
       type: Type.ARRAY,
       items: { type: Type.STRING },
-      description: "Bullet points for Role in Family",
+      description: "A single 1-line statement for Role in Family",
     },
     society: {
       type: Type.ARRAY,
       items: { type: Type.STRING },
-      description: "Bullet points for Role in Society",
+      description: "A single 1-line statement for Role in Society",
     },
     environment: {
       type: Type.ARRAY,
       items: { type: Type.STRING },
-      description: "Bullet points for Role in Environment",
+      description: "A single 1-line statement for Role in Environment",
     },
   },
   required: ["name", "rollNo", "self", "family", "society", "environment"],
