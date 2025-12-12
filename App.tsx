@@ -31,8 +31,7 @@ const RefreshIcon = () => (
 );
 
 // Hardcoded API Key as requested for client-side usage
-const API_KEY = "AIzaSyDArORPqS60kMCKcXfZQY6w3WE6cjyOQoI";
-
+const. API_KEY="AIzaSyC_Rsy7XEuYBS5uOnlb94ixLEDIAJhCP-k";
 const DEMO_TEXT = `Student Name: Bala Anandan
 Roll Number: 23SU2360029
 
