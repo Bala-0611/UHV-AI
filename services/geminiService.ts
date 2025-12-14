@@ -44,12 +44,9 @@ const RESPONSE_SCHEMA: Schema = {
   required: ["name", "rollNo", "self", "family", "society", "environment"],
 };
 
-export const analyzeAssignment = async (input: { text?: string, imageBase64?: string }, apiKey: string): Promise<UHVAnalysisResult> => {
-  if (!apiKey) {
-    throw new Error("API Key is missing in the configuration.");
-  }
-
-  const ai = new GoogleGenAI({ apiKey: apiKey });
+export const analyzeAssignment = async (input: { text?: string, imageBase64?: string }): Promise<UHVAnalysisResult> => {
+  // API Key must be set in your environment variables (e.g., .env file) as API_KEY
+  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
   let contents;
   

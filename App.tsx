@@ -31,7 +31,8 @@ const RefreshIcon = () => (
 );
 
 // Hardcoded API Key as requested for client-side usage
-const. API_KEY="AIzaSyC_Rsy7XEuYBS5uOnlb94ixLEDIAJhCP-k";
+const API_KEY = "AIzaSyDArORPqS60kMCKcXfZQY6w3WE6cjyOQoI";
+
 const DEMO_TEXT = `Student Name: Bala Anandan
 Roll Number: 23SU2360029
 
@@ -66,10 +67,11 @@ const App: React.FC = () => {
     setResult(null);
 
     try {
+      // API Key is now handled via process.env inside the service
       const data = await analyzeAssignment({
         text: !capturedImage ? ocrText : undefined,
         imageBase64: capturedImage || undefined
-      }, API_KEY);
+      });
       setResult(data);
     } catch (err: any) {
       setError(err.message || "An unexpected error occurred while processing.");
